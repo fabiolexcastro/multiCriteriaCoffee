@@ -29,6 +29,10 @@ get.binary <- function(spce){
   ## To filter 
   cat('To process: ', spce, '\n')
   dire <- grep(spce, dirs, value = T)
+  fles <- dir_ls(dire)
+  fles <- as.character(fles)
+  
+  
   
   
 }
