@@ -1,0 +1,24 @@
+
+# Install libraries -------------------------------------------------------
+library(pacman)
+p_load(terra, fs, sf, glue, tidyverse, ggspatial, geodata, RColorBrewer)
+
+g <- gc(reset = T)
+rm(list = ls())
+options(scipen = 999, warn = -1)
+
+# Load data ---------------------------------------------------------------
+
+# Vector data -------------------------------------------------------------
+mex0 <- geodata::gadm(country = 'MEX', level = 0, path = tempdir())
+mex1 <- geodata::gadm(country = 'MEX', level = 1, path = tempdir())
+mex2 <- geodata::gadm(country = 'MEX', level = 2, path = tempdir())
+
+# Raster data -------------------------------------------------------------
+
+## 
+dirs <- dir_ls('./data/continuos', type = 'directory')
+dirs <- as.character(dirs)
+
+## 
+map(dirs, dir_ls)
