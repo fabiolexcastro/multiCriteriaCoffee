@@ -55,7 +55,7 @@ get.binary <- function(spce){
   vles <- as.numeric(vles)
   
   ## Percentiles
-  percenti()
+  qntl <- quantile(vles, seq(0, 1, 0.01))
   
   
   
