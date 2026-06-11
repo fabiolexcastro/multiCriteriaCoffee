@@ -44,6 +44,8 @@ get.binary <- function(spce){
   
   ### Future
   bcc  <- grep('bcc', fles, value = T)
+  bcc  <- rast(bcc)
+  mir  <- grep('mir', fles, value = T)
   
   
   
