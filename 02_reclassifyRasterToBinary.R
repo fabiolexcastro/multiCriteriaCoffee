@@ -7,6 +7,7 @@ g <- gc(reset = T)
 rm(list = ls())
 options(scipen = 999, warn = -1)
 
+
 # Load data ---------------------------------------------------------------
 
 # Vector data -------------------------------------------------------------
@@ -30,7 +31,7 @@ get.binary <- function(spce){
   
   ## To filter 
   cat('To process: ', spce, '\n')
-  
+  dire <- grep(spce, dirs, value = T)
   
   
 }
