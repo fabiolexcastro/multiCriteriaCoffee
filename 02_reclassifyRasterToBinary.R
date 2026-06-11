@@ -38,6 +38,15 @@ get.binary <- function(spce){
   
   ## Raster data 
   
+  ### Current
+  crnt <- grep('actual', fles, value = T)
+  crnt <- rast(crnt)
+  plot(crnt)
+  
+  
+  
+  
+  
   
   
   
