@@ -26,5 +26,12 @@ map(dirs, dir_ls)
 # Function to classify  ---------------------------------------------------
 spce <- 'C_arabica'
 
-
+get.binary <- function(spce){
+  
+  ## To filter 
+  cat('To process: ', spce, '\n')
+  
+  
+  
+}
 
