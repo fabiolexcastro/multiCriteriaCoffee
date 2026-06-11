@@ -24,7 +24,7 @@ dirs <- as.character(dirs)
 # Function to classify  ---------------------------------------------------
 spce <- 'C_arabica'
 
-get.binary <- function(spce){
+get.graph <- function(spce){
   
   ## To filter 
   cat('To process: ', spce, '\n')
@@ -83,6 +83,13 @@ get.binary <- function(spce){
     units = 'in', width = 7, height = 5, dpi = 300, create.dir = T
   )
 
+  
+  ## To save the table 
+  dout <- glue('./tbl/quantile_vals'); dir_create(dout)
+  write.csv(qntl, glue('{dout}/values_{scpe}.csv'), row.names = FALSE)
+  
+  ## Finish 
+  cat('Done!\n')
   
 }
 
