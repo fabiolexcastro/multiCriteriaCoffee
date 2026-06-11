@@ -56,13 +56,24 @@ get.binary <- function(spce){
   
   ## Percentiles
   qntl <- quantile(vles, seq(0, 1, 0.01))
+  qntl <- rownames_to_column(as.data.frame(qntl))
+  qntl <- mutate(qntl, percentage = parse_number(rowname))
   
+  ## A simple plot 
+  g.qntl <- ggplot(data = qntl, aes(x = percentage, y = qntl))  +
+    geom_point() + 
+    geom_line(col = 'grey30') + 
+    labs(x = 'Porcentaje', y = 'Cuantil') + 
+    ggtitle(label = paste0('Especie: ', spce), 
+            subtitle = paste0('Línea base')) +
+    theme_bw() +
+    theme(
+      axis.text.y = element_text(angle = 90, hjust = 0.5), 
+      plot.title = element_text(hjust = 0.5, size = 12), 
+      plot.subtitle = element_text(hjust = 0.5, size = 10)
+    )
   
-  
-  
-  
-  
-  
+  g.qntl
   
   
   
