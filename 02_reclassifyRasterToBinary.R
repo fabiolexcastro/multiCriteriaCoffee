@@ -94,6 +94,8 @@ get.graph <- function(spce){
 # Draw the graphs ---------------------------------------------------------
 purrr::walk(basename(dirs), get.graph)
 
-
+# Save a table  -----------------------------------------------------------
+dcsn <- tibble(specie = basename(dirs), threshold = 0)
+write.csv(dcsn, './tbl/thresholds.csv', row.names = FALSE)
 
 
