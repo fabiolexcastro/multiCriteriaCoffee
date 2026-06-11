@@ -56,8 +56,12 @@ make.multi <- function(prdo){
   }
   
   ## To make a stack 
+  map(rstr, res)
   stck <- reduce(rstr, c)
   
+  ## Extract by mask 
+  stck <- terra::crop(stck, mex0)
+  stck <- terra::mask(stck, mex0)
   
   
 }
