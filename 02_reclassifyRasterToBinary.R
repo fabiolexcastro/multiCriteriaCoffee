@@ -22,3 +22,9 @@ dirs <- as.character(dirs)
 
 ## 
 map(dirs, dir_ls)
+
+# Function to classify  ---------------------------------------------------
+spce <- 'C_arabica'
+
+
+
