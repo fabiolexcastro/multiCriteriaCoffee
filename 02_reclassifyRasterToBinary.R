@@ -50,6 +50,7 @@ get.binary <- function(spce){
   
   ## Extract values for the presences
   vles <- terra::extract(crnt, occr[,2:3])
+  vles <- pull(vles, 2)
   
   
   
