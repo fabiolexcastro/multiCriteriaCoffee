@@ -52,7 +52,7 @@ make.multi <- function(prdo){
   ## To add NAs
   for(i in 1:length(rstr)){
     ext(rstr[[i]]) <- ext(mex0)
-    rstr[[i]][is.na(rstr)] <- -1
+    rstr[[i]][is.na(rstr[[i]])] <- -1
   }
   
 }
