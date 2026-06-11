@@ -23,7 +23,6 @@ dirs <- as.character(dirs)
 
 # Function to classify  ---------------------------------------------------
 spce <- 'C_arabica'
-
 get.graph <- function(spce){
   
   ## To filter 
@@ -83,13 +82,18 @@ get.graph <- function(spce){
     units = 'in', width = 7, height = 5, dpi = 300, create.dir = T
   )
 
-  
   ## To save the table 
   dout <- glue('./tbl/quantile_vals'); dir_create(dout)
-  write.csv(qntl, glue('{dout}/values_{scpe}.csv'), row.names = FALSE)
+  write.csv(qntl, glue('{dout}/values_{spce}.csv'), row.names = FALSE)
   
   ## Finish 
   cat('Done!\n')
   
 }
+
+# Draw the graphs ---------------------------------------------------------
+purrr::walk(basename(dirs), get.graph)
+
+
+
 
