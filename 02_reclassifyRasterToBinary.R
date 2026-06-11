@@ -49,6 +49,11 @@ get.binary <- function(spce){
   mir  <- rast(mir)
   
   ## Extract values for the presences
+  vles <- terra::extract(rstr, occr[,2:3])
+  
+  
+  
+  
   
   
   
