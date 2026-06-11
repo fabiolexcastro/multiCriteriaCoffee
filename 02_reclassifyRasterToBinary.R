@@ -41,7 +41,10 @@ get.binary <- function(spce){
   ### Current
   crnt <- grep('actual', fles, value = T)
   crnt <- rast(crnt)
-  plot(crnt)
+  
+  ### Future
+  bcc  <- grep('bcc', fles, value = T)
+  
   
   
   
