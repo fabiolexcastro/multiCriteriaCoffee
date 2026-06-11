@@ -62,7 +62,7 @@ get.graph <- function(spce){
   g.qntl <- ggplot(data = qntl, aes(x = percentage, y = qntl))  +
     geom_point() + 
     geom_line(col = 'grey30') + 
-    labs(x = 'Porcentaje', y = 'Cuantil') + 
+    labs(x = 'Porcentaje', y = 'Umbral') + 
     ggtitle(label = paste0('Especie: ', spce), 
             subtitle = paste0('Línea base')) +
     theme_bw() +
