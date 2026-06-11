@@ -75,12 +75,14 @@ get.binary <- function(spce){
   
   g.qntl
   
-  
-  
-  
-  
-  
-  
+  ## To save the graph
+  dout <- glue('./png/graphs/quantiles')
+  ggsave(
+    plot = g.qntl, 
+    filename = glue('{dout}/gg_{spce}.jpg'), 
+    units = 'in', width = 7, height = 5, dpi = 300, create.dir = T
+  )
+
   
 }
 
