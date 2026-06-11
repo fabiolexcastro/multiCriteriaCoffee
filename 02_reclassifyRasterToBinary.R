@@ -32,6 +32,12 @@ get.binary <- function(spce){
   fles <- dir_ls(dire)
   fles <- as.character(fles)
   
+  ## Presences
+  occr <- grep('.csv$', fles, value = T)
+  occr <- read_csv(occr, show_col_types = FALSE)
+  
+  ## Raster data 
+  
   
   
   
