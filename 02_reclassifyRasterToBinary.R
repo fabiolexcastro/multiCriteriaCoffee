@@ -46,6 +46,11 @@ get.binary <- function(spce){
   bcc  <- grep('bcc', fles, value = T)
   bcc  <- rast(bcc)
   mir  <- grep('mir', fles, value = T)
+  mir  <- rast(mir)
+  
+  ## Extract values for the presences
+  
+  
   
   
   
