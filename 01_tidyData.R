@@ -45,7 +45,7 @@ make.multi <- function(prdo){
   
   ## A plot 
   for(i in 1:length(rstr)){
-    plot(rstr[[i]], main = basename(fles))
+    plot(rstr[[i]], main = basename(fles)[i])
     Sys.sleep(time = 3)
   }
   
