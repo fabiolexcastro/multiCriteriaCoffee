@@ -55,6 +55,11 @@ make.multi <- function(prdo){
     rstr[[i]][is.na(rstr[[i]])] <- -1
   }
   
+  ## To make a stack 
+  stck <- reduce(rstr, c)
+  
+  
+  
 }
 
 
