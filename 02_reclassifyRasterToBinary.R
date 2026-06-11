@@ -21,9 +21,6 @@ mex2 <- geodata::gadm(country = 'MEX', level = 2, path = tempdir())
 dirs <- dir_ls('./data/continuos', type = 'directory')
 dirs <- as.character(dirs)
 
-## 
-map(dirs, dir_ls)
-
 # Function to classify  ---------------------------------------------------
 spce <- 'C_arabica'
 
