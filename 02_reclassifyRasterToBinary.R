@@ -111,6 +111,13 @@ get.binary <- function(spce){
   
   ## To read as a raster
   
+  ### Current
+  crnt <- grep('actual', fles, value = T)
+  crnt <- rast(crnt)
+  
+  
+  
+  
 }
 
 
