@@ -18,8 +18,8 @@ mex2 <- geodata::gadm(country = 'MEX', level = 2, path = tempdir())
 # Raster data -------------------------------------------------------------
 
 ## Directories
-dirs <- dir_ls('./data/continuos', type = 'directory')
+dirs <- dir_ls('./data/binarios', type = 'directory')
 dirs <- as.character(dirs)
 
 ## Files
-map(dirs, dir_ls, regexp = 'stack_binary')
+map(dirs, dir_ls)
