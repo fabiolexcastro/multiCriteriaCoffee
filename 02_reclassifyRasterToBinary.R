@@ -145,6 +145,9 @@ get.binary <- function(spce){
   bcc.bin <- terra::crop(bcc.bin, mex0) %>% terra::mask(mex0)
   mir.bin <- terra::crop(mir.bin, mex0) %>% terra::mask(mex0)
   
+  ## To make the stack 
+  stck <- c(crnt.bin, bcc.bin, mir.bin)
+  plot(stck)
   
   
 }
