@@ -122,6 +122,8 @@ get.binary <- function(spce){
   mir  <- rast(mir)
   
   ## Threshold
+  thr <- filter(dcsn, specie == spce)
+  thr <- pull(thr, 2)
   
 }
 
