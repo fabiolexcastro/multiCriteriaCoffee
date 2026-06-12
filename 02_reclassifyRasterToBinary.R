@@ -115,7 +115,11 @@ get.binary <- function(spce){
   crnt <- grep('actual', fles, value = T)
   crnt <- rast(crnt)
   
-  
+  ### Future
+  bcc  <- grep('bcc', fles, value = T)
+  bcc  <- rast(bcc)
+  mir  <- grep('mir', fles, value = T)
+  mir  <- rast(mir)
   
   
 }
