@@ -24,4 +24,5 @@ dirs <- as.character(dirs)
 ## Files
 map(dirs, dir_ls) %>% 
   unlist() %>% 
-  as.character()
+  as.character() %>% 
+  grep('stack_binary.tif', ., value = T)
