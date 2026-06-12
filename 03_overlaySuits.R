@@ -26,3 +26,18 @@ fles <- map(dirs, dir_ls) %>%
   unlist() %>% 
   as.character() %>% 
   grep('stack_binary.tif', ., value = T)
+
+## Species
+spcs <- basename(dirs)
+
+# To overlay  -------------------------------------------------------------
+make.overlay <- function(spce){
+  
+  
+  
+  
+}
+
+
+
+
