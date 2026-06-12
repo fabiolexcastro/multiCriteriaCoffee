@@ -7,7 +7,6 @@ g <- gc(reset = T)
 rm(list = ls())
 options(scipen = 999, warn = -1)
 
-
 # Load data ---------------------------------------------------------------
 
 # Vector data -------------------------------------------------------------
@@ -17,7 +16,7 @@ mex2 <- geodata::gadm(country = 'MEX', level = 2, path = tempdir())
 
 # Raster data -------------------------------------------------------------
 
-## 
+## 7
 dirs <- dir_ls('./data/continuos', type = 'directory')
 dirs <- as.character(dirs)
 
@@ -95,7 +94,8 @@ get.graph <- function(spce){
 purrr::walk(basename(dirs), get.graph)
 
 # Save a table  -----------------------------------------------------------
-dcsn <- tibble(specie = basename(dirs), threshold = 0)
-write.csv(dcsn, './tbl/thresholds.csv', row.names = FALSE)
+# dcsn <- tibble(specie = basename(dirs), threshold = 0)
+# write.csv(dcsn, './tbl/thresholds.csv', row.names = FALSE)
 
-
+# To read the thresholds --------------------------------------------------
+dcsn <- read.table('./tbl/thresholds.csv', sep = ';', header = TRUE)
