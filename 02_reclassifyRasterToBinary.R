@@ -149,8 +149,13 @@ get.binary <- function(spce){
   stck <- c(crnt.bin, bcc.bin, mir.bin)
   plot(stck)
   
+  ## To write the raster
+  dout <- glue('./data/binarios/{spce}/stack_binary.tif')
+  terra::writeRaster(x = stck, filename = dout, overwrite = TRUE)
   
 }
 
+# To apply the function ---------------------------------------------------
+purrr::walk(spcs, get.binary)
 
 
