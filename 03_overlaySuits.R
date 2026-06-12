@@ -22,4 +22,6 @@ dirs <- dir_ls('./data/binarios', type = 'directory')
 dirs <- as.character(dirs)
 
 ## Files
-map(dirs, dir_ls)
+map(dirs, dir_ls) %>% 
+  unlist() %>% 
+  as.character()
