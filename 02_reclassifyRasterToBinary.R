@@ -121,6 +121,7 @@ get.binary <- function(spce){
   mir  <- grep('mir', fles, value = T)
   mir  <- rast(mir)
   
+  ## Threshold
   
 }
 
