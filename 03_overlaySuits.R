@@ -22,3 +22,4 @@ dirs <- dir_ls('./data/continuos', type = 'directory')
 dirs <- as.character(dirs)
 
 ## Files
+map(dirs, dir_ls, regexp = 'stack_binary')
