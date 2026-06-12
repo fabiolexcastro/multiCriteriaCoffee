@@ -156,6 +156,9 @@ get.binary <- function(spce){
 }
 
 # To apply the function ---------------------------------------------------
-purrr::walk(spcs, get.binary)
+purrr::walk(basename(dirs), get.binary)
+
+# -------------------------------------------------------------------------
+
 
 
