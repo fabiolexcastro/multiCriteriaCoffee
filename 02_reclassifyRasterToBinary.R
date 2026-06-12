@@ -99,3 +99,14 @@ purrr::walk(basename(dirs), get.graph)
 
 # To read the thresholds --------------------------------------------------
 dcsn <- read.table('./tbl/thresholds.csv', sep = ';', header = TRUE)
+
+# Function to binarize ----------------------------------------------------
+get.binary <- function(spce){
+  
+  
+  
+  
+}
+
+
+
