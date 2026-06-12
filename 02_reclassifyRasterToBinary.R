@@ -127,7 +127,21 @@ get.binary <- function(spce){
   
   ## To classify 
   crnt.bin <- terra::ifel(crnt < thr, 0, 1)
- 
+  bcc.bin  <- terra::ifel(bcc  < thr, 0, 1)
+  mir.bin  <- terra::ifel(mir  < thr, 0, 1)
+  
+  ## Adjust the extent
+  ext(crnt.bin) <- ext(mex0)
+  ext(bcc.bin)  <- ext(mex0)
+  ext(mir.bin)  <- ext(mex0)
+  
+  ## Add values to NA
+  crnt.bin[is.na(crnt.bin)] <- 0
+  bcc.bin[is.na(bcc.bin)]   <- 0
+  mir.bin[is.na(mir.bin)]   <- 0
+  
+  
+  
   
   
 }
