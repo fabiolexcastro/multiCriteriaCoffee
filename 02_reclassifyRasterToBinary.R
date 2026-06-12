@@ -125,6 +125,11 @@ get.binary <- function(spce){
   thr <- filter(dcsn, specie == spce)
   thr <- pull(thr, 2)
   
+  ## To classify 
+  crnt.bin <- terra::ifel(crnt < thr, 0, 1)
+ 
+  
+  
 }
 
 
