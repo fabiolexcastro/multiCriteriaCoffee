@@ -140,7 +140,10 @@ get.binary <- function(spce){
   bcc.bin[is.na(bcc.bin)]   <- 0
   mir.bin[is.na(mir.bin)]   <- 0
   
-  
+  ## To extract by mask 
+  crnt.bin <- terra::crop(crnt.bin, mex0) %>% terra::mask(mex0)
+  bcc.bin <- terra::crop(bcc.bin, mex0) %>% terra::mask(mex0)
+  mir.bin <- terra::crop(mir.bin, mex0) %>% terra::mask(mex0)
   
   
   
