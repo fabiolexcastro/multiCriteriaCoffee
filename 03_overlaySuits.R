@@ -62,6 +62,11 @@ make.overlay <- function(prdo){
   nms <- basename(dirname(fles))
   names(rst) <- glue('{nms}__{prdo}')
   
+  ## To write the rasters
+  out <- './data/binarios_stack'
+  dir_create(out)
+  terra::writeRaster(x = rst, filename = glue('{out}/stack_{prdo}.tif'), overwrite = TRUE)
+  
   ## Finish 
   cat('Done!\n')
   return()
