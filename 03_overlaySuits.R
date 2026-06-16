@@ -11,9 +11,9 @@ options(scipen = 999, warn = -1)
 # Data --------------------------------------------------------------------
 
 # Vector data 
-mex0 <- geodata::gadm(country = 'MEX', level = 0, path = tempdir())
-mex1 <- geodata::gadm(country = 'MEX', level = 1, path = tempdir())
-mex2 <- geodata::gadm(country = 'MEX', level = 2, path = tempdir())
+# mex0 <- geodata::gadm(country = 'MEX', level = 0, path = tempdir())
+# mex1 <- geodata::gadm(country = 'MEX', level = 1, path = tempdir())
+# mex2 <- geodata::gadm(country = 'MEX', level = 2, path = tempdir())
 
 wrld <- terra::vect('./data/gpkg/all_countries.gpkg')
 mex0 <- wrld[wrld$ISO3 == 'MEX',]
@@ -33,14 +33,17 @@ fles <- map(dirs, dir_ls) %>%
 ## Species
 spcs <- basename(dirs)
 prds <- c('actual', 'bcc_245', 'bcc_370', 'miro_245', 'miro_370')
-prdo <- 'actual'
+# prdo <- 'actual'
+
+rstr <- map(fles, rast)
 
 # To overlay  -------------------------------------------------------------
 make.overlay <- function(prdo){
   
   ## To start
   cat('To start: ', prdo, '\n')
-  rst <- map(fles, rast)
+  # rst <- map(fles, rast)
+  rst <- rstr
   rst <- map(1:length(rst), function(i){
     cat('Layer #', i, '\n')
     rs <- rst[[i]][[grep(prdo, names(rst[[i]]))]]
@@ -74,5 +77,7 @@ make.overlay <- function(prdo){
 }
 purrr::walk(prds, make.overlay)
 
-
+for(z in prds){
+  make.overlay(prdo = z)
+}
 #
