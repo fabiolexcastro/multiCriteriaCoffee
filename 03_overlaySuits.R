@@ -55,6 +55,10 @@ make.overlay <- function(prdo){
     return(r)
   })
   
+  ## To reduce as a stack
+  rst <- reduce(rst, c)
+  
+  
 
   ## Finish 
   cat('Done!\n')
