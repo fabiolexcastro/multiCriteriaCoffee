@@ -31,15 +31,16 @@ fles <- map(dirs, dir_ls) %>%
 
 ## Species
 spcs <- basename(dirs)
-spce <- spcs[1]
+prds <- c('actual', 'bcc_245', 'bcc_370', 'miro_245', 'miro_370')
 
 # To overlay  -------------------------------------------------------------
-make.overlay <- function(spce){
+make.overlay <- function(prdo){
   
   ## To start
-  cat('To start: ', spce, '\n')
-  fls <- grep(spce, fles, value = T)
+  cat('To start: ', prdo, '\n')
+  rst <- map(fles, rast)
   rst <- rast(fls)
+  plot(rst)
   
   ## Finish 
   cat('Done!\n')
