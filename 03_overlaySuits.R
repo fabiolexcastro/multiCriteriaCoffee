@@ -38,7 +38,8 @@ make.overlay <- function(spce){
   
   ## To start
   cat('To start: ', spce, '\n')
-  
+  fls <- grep(spce, fles, value = T)
+  rst <- rast(fls)
   
   ## Finish 
   cat('Done!\n')
