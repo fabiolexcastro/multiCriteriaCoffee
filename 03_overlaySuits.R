@@ -58,8 +58,10 @@ make.overlay <- function(prdo){
   ## To reduce as a stack
   rst <- reduce(rst, c)
   
+  ## To change the names
+  nms <- basename(dirname(fles))
+  names(rst) <- glue('{nms}__{prdo}')
   
-
   ## Finish 
   cat('Done!\n')
   return()
