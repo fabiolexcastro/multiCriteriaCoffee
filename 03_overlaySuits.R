@@ -31,6 +31,7 @@ fles <- map(dirs, dir_ls) %>%
 
 ## Species
 spcs <- basename(dirs)
+spce <- spcs[1]
 
 # To overlay  -------------------------------------------------------------
 make.overlay <- function(spce){
