@@ -15,6 +15,8 @@ mex0 <- geodata::gadm(country = 'MEX', level = 0, path = tempdir())
 mex1 <- geodata::gadm(country = 'MEX', level = 1, path = tempdir())
 mex2 <- geodata::gadm(country = 'MEX', level = 2, path = tempdir())
 
+wrld <- terra::vect('./data/gpkg/all_countries.gpkg')
+
 # Raster data -------------------------------------------------------------
 
 ## Directories
@@ -33,8 +35,13 @@ spcs <- basename(dirs)
 # To overlay  -------------------------------------------------------------
 make.overlay <- function(spce){
   
+  ## To start
+  cat('To start: ', spce, '\n')
   
   
+  ## Finish 
+  cat('Done!\n')
+  return()
   
 }
 
