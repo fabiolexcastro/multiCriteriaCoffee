@@ -129,15 +129,18 @@ get.binary <- function(spce){
   thr <- filter(dcsn, specie == spce)
   thr <- pull(thr, 2)
   
+  ## Mex project 
+  mex0 <- terra::project(mex0, crs(crnt))
+  
   ## To classify 
   crnt.bin <- terra::ifel(crnt < thr, 0, 1)
   bcc.bin  <- terra::ifel(bcc  < thr, 0, 1)
   mir.bin  <- terra::ifel(mir  < thr, 0, 1)
   
-  ## Adjust the extent
-  ext(crnt.bin) <- ext(mex0)
-  ext(bcc.bin)  <- ext(mex0)
-  ext(mir.bin)  <- ext(mex0)
+  ## Extend the raster 
+  crnt.bin <- terra::extend(crnt.bin, mex0)
+  bcc.bin  <- terra::extend(bcc.bin, mex0)
+  mir.bin  <- terra::extend(mir.bin, mex0)
   
   ## Add values to NA
   crnt.bin[is.na(crnt.bin)] <- 0
