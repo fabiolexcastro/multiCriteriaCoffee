@@ -35,15 +35,12 @@ spcs <- basename(dirs)
 prds <- c('actual', 'bcc_245', 'bcc_370', 'miro_245', 'miro_370')
 # prdo <- 'actual'
 
-rstr <- map(fles, rast)
-
 # To overlay  -------------------------------------------------------------
 make.overlay <- function(prdo){
   
   ## To start
   cat('To start: ', prdo, '\n')
-  # rst <- map(fles, rast)
-  rst <- rstr
+  rst <- map(fles, rast)
   rst <- map(1:length(rst), function(i){
     cat('Layer #', i, '\n')
     rs <- rst[[i]][[grep(prdo, names(rst[[i]]))]]
