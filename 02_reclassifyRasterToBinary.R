@@ -14,9 +14,12 @@ mex0 <- geodata::gadm(country = 'MEX', level = 0, path = tempdir())
 mex1 <- geodata::gadm(country = 'MEX', level = 1, path = tempdir())
 mex2 <- geodata::gadm(country = 'MEX', level = 2, path = tempdir())
 
+wrld <- terra::vect('./data/gpkg/all_countries.gpkg')
+mex0 <- wrld[wrld$ISO3 == 'MEX',]
+
 # Raster data -------------------------------------------------------------
 
-## 7
+## 
 dirs <- dir_ls('./data/continuos', type = 'directory')
 dirs <- as.character(dirs)
 
@@ -107,6 +110,7 @@ get.binary <- function(spce){
   cat('To process: ', spce, '\n')
   dire <- grep(spce, dirs, value = T)
   fles <- dir_ls(dire)
+  fles <- grep('.asc$', fles, value = T)
   fles <- as.character(fles)
   
   ## To read as a raster
