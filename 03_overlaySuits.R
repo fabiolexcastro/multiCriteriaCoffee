@@ -45,7 +45,7 @@ make.overlay <- function(prdo){
     rs <- rst[[i]][[grep(prdo, names(rst[[i]]))]]
     return(rs)
   })
-
+  rst <- reduce(rst, c)
   
   ## Finish 
   cat('Done!\n')
