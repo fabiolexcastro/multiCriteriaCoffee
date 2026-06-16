@@ -40,7 +40,11 @@ make.overlay <- function(prdo){
   ## To start
   cat('To start: ', prdo, '\n')
   rst <- map(fles, rast)
-  rst <- rast(fls)
+  rst <- map(1:length(rst), function(i){
+    cat('Layer #', i, '\n')
+    rs <- rst[[i]][[grep(prdo, names(rst[[i]]))]]
+    return(rs)
+  })
 
   
   ## Finish 
