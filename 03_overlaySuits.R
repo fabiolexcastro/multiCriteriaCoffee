@@ -16,6 +16,7 @@ mex1 <- geodata::gadm(country = 'MEX', level = 1, path = tempdir())
 mex2 <- geodata::gadm(country = 'MEX', level = 2, path = tempdir())
 
 wrld <- terra::vect('./data/gpkg/all_countries.gpkg')
+mex0 <- wrld[wrld$ISO3 == 'MEX',]
 
 # Raster data -------------------------------------------------------------
 
@@ -45,8 +46,16 @@ make.overlay <- function(prdo){
     rs <- rst[[i]][[grep(prdo, names(rst[[i]]))]]
     return(rs)
   })
-  rst <- reduce(rst, c)
+  map(rst, ext)
   
+  ## Extent adjust
+  rst <- map(1:length(rst), function(i){
+    r <- rst[[i]]
+    r <- terra::resample(r, rst[[1]], method = 'near')
+    return(r)
+  })
+  
+
   ## Finish 
   cat('Done!\n')
   return()
